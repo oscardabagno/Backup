@@ -104,6 +104,12 @@ if [ "$CONFIG" = true ] ; then
     esac
   fi
 
+  #test di verifica se il file è esistente
+  if [ ! -f "$CONFIG_FILE" ]; then
+    echo "file non trovato"
+    read -p "continue (s/n)?" choice
+  fi
+
 else
   # esecuzione backup da file di configurazione precedentemente creato
   echo "Lettura del file di configurazione..."
